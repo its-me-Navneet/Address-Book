@@ -8,6 +8,9 @@ public class Person {
    private  String city ;
    private  String zip ;
 
+    public Person() {
+    }
+
     public Person(String fName, String lName, String email, String pNo, String address, String city, String zip) {
         this.fName = fName;
         this.lName = lName;
@@ -72,5 +75,18 @@ public class Person {
 
     public void setZip(String zip) {
         this.zip = zip;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", email='" + email + '\'' +
+                ", pNo='" + pNo + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", zip='" + zip + '\'' +
+                '}';
     }
 }
