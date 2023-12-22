@@ -61,8 +61,10 @@ public class Main {
 
         }
 
-
-
+    // Delete the contact of given person
+        System.out.println("Enter full name to remove from address book ");
+        String nameToDelete = sc.nextLine() ;
+        addressBook.deleteTheContactDetails(nameToDelete);
 
     }
 }

@@ -32,4 +32,15 @@ public  class AddressBook {
 
        }
    }
+
+   public void deleteTheContactDetails(String name){
+
+       if(checkPerson(name)){
+           listOfAddress.remove(name) ;
+           System.out.println("Removed successfully");
+       }
+       else{
+           System.out.println("No user exist of such name");
+       }
+   }
 }
