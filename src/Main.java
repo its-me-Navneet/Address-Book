@@ -29,14 +29,38 @@ public class Main {
         addressBook.addPerson(p);
 
 // Print the details of addressBook
+       addressBook.viewContacts();
+// Edit the contact details of person
 
-        for(Map.Entry<String,Person> details : AddressBook.listOfAddress.entrySet()){
+        System.out.println("Enter the name of person to edit");
+           sc.nextLine() ;
+        String name = sc.nextLine();
 
-            Person curr = details.getValue() ;
+        if(addressBook.checkPerson(name)){
+            Person editPersonn = new Person() ;
+            System.out.println("Enter your first name ");
+            editPersonn.setfName(sc.next());
+            System.out.println("Enter your last name ");
+            editPersonn.setlName(sc.next());
+            System.out.println("Enter your email  ");
+            editPersonn.setEmail(sc.next());
+            System.out.println("Enter your Phone no ");
+            editPersonn.setpNo(sc.next());
+            System.out.println("Enter your Address ");
+            editPersonn.setAddress(sc.next());
+            System.out.println("Enter your City ");
+            editPersonn.setCity(sc.next());
+            System.out.println("Enter your ZIP ");
+            editPersonn.setZip(sc.next());
 
-            System.out.println(curr);
+            addressBook.addPerson(editPersonn);
+            System.out.println(editPersonn);
+        }
+        else{
+            System.out.println("No name such exist in our address book");
 
         }
+
 
 
 
