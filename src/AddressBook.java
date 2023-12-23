@@ -3,7 +3,10 @@ import java.util.List;
 import java.util.Map;
 
 public  class AddressBook {
-   public static HashMap<String, Person> listOfAddress = new HashMap<>() ;
+
+    String name ;
+
+   public static  HashMap<String, Person> listOfAddress = new HashMap<>() ;
 
    public void addPerson(Person p){
         String name = p.getfName() +" "+ p.getlName();

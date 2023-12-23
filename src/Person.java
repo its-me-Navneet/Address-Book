@@ -7,11 +7,12 @@ public class Person {
    private String address ;
    private  String city ;
    private  String zip ;
+   private String state ;
 
     public Person() {
     }
 
-    public Person(String fName, String lName, String email, String pNo, String address, String city, String zip) {
+    public Person(String fName, String lName, String email, String pNo, String address, String city, String zip,String state) {
         this.fName = fName;
         this.lName = lName;
         this.email = email;
@@ -19,6 +20,7 @@ public class Person {
         this.address = address;
         this.city = city;
         this.zip = zip;
+        this.state = state;
     }
 
     public String getfName() {
@@ -77,6 +79,14 @@ public class Person {
         this.zip = zip;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -87,6 +97,6 @@ public class Person {
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", zip='" + zip + '\'' +
-                '}';
+                '}  ';
     }
 }

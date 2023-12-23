@@ -1,19 +1,37 @@
 import java.sql.SQLOutput;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+
+    static int cnt=0 ;
+    static HashMap<String,Integer>stateCode = new HashMap<>() ;
+
+     static int getCode(String state){
+          int code ;
+         if(!stateCode.containsKey(state)){
+               cnt++ ;
+              stateCode.put(state,cnt) ;
+         }
+         return stateCode.get(state) ;
+     }
+
     public static void main(String[] args) {
 
         System.out.println("Hello and welcome to Address Book System !!");
 
-        AddressBook addressBook = new AddressBook();
+        AddressBook addressBook[] = new AddressBook[28] ;
+         addressBook[0] =new AddressBook();
         // adding some person
-        Person p1 = new Person("Navneet","kumar","xyz@gmail.com","12345055","xyz","A.bad","824101") ;
-        Person p2 = new Person("xyz","kumar","xyz@gmail.com","12345055","xyz","A.bad","824101") ;
+        Person p1 = new Person("Navneet","kumar","xyz@gmail.com","12345055","xyz","A.bad","824101","Bihar") ;
+        Person p2 = new Person("xyz","kumar","xyz@gmail.com","12345055","xyz","A.bad","824101","UP") ;
 
-        addressBook.addPerson(p1);
-        addressBook.addPerson(p2);
+
+
+        addressBook[getCode(p1.getState())].addPerson(p1);
+        addressBook[getCode(p2.getState())].addPerson(p2);
 
 
         System.out.println("********************************");
@@ -36,9 +54,11 @@ public class Main {
             p.setCity(sc.next());
             System.out.println("Enter your ZIP ");
             p.setZip(sc.next());
+            System.out.println("Enter your State");
+            p.setState(sc.next());
 
 //       Insert to  AddressBook database
-            addressBook.addPerson(p);
+            addressBook[getCode(p.getState())].addPerson(p);
             System.out.println("Add more person ?");
             add=sc.nextInt() ;
              sc.nextLine() ;
