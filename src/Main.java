@@ -10,7 +10,7 @@ public class Main {
     static HashMap<String,Integer>stateCode = new HashMap<>() ;
 
      static int getCode(String state){
-          int code ;
+
          if(!stateCode.containsKey(state)){
                cnt++ ;
               stateCode.put(state,cnt) ;
@@ -30,8 +30,8 @@ public class Main {
 
 
 
-        addressBook[getCode(p1.getState())].addPerson(p1);
-        addressBook[getCode(p2.getState())].addPerson(p2);
+        AddressBook.addPerson(p1);
+        AddressBook.addPerson(p2);
 
 
         System.out.println("********************************");
@@ -57,23 +57,25 @@ public class Main {
             System.out.println("Enter your State");
             p.setState(sc.next());
 
-//       Insert to  AddressBook database
-            addressBook[getCode(p.getState())].addPerson(p);
-            System.out.println("Add more person ?");
-            add=sc.nextInt() ;
+//         Insert to  AddressBook database
+             AddressBook.addPerson(p);
+
+             System.out.println("Add more person ?");
+              add=sc.nextInt() ;
              sc.nextLine() ;
         }
 
 
-// Print the details of addressBook
-        addressBook.viewContacts();
+
+
+
 // Edit the contact details of person
 
-        System.out.println("Enter the name of person to edit");
+        System.out.println("Enter the name of person along with email without space to edit");
 
         String name = sc.nextLine();
 
-        if(addressBook.checkPerson(name)){
+        if(AddressBook.checkPerson(name)){
             Person editPersonn = new Person() ;
             System.out.println("Enter your first name ");
             editPersonn.setfName(sc.next());
@@ -90,17 +92,23 @@ public class Main {
             System.out.println("Enter your ZIP ");
             editPersonn.setZip(sc.next());
             sc.nextLine() ;
-            addressBook.addPerson(editPersonn);
+            AddressBook.addPerson(editPersonn);
             System.out.println(editPersonn);
         }
         else{
             System.out.println("No name such exist in our address book");
 
         }
-        // Delete the contact of given person
-        System.out.println("Enter full name to remove from address book ");
+//        // Delete the contact of given person
+        System.out.println("Enter full name and email without space to remove from address book ");
         String nameToDelete = sc.nextLine() ;
-        addressBook.deleteTheContactDetails(nameToDelete);
+        AddressBook.deleteTheContactDetails(nameToDelete);
+//  print the list of contact of whole directory
+       AddressBook.viewAllStateAddressBook();
+
+       // print the list of particular state
+
+        AddressBook.printState("Bihar") ;
 
     }
 }

@@ -97,6 +97,7 @@ public class Person {
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", zip='" + zip + '\'' +
-                '}  ';
+                ", state='" + state + '\'' +
+                '}';
     }
 }
