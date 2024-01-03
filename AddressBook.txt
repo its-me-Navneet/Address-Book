@@ -1,0 +1,3 @@
+Person{fName='Navneet', lName='kumar', email='xyz@gmail.com', pNo='12345055', address='xyz', city='A.bad', zip='824101', state='Bihar'}
+Person{fName='Navneet', lName='kumar', email='xyz@gmail.com', pNo='12345055', address='xyz', city='A.bad', zip='824101', state='Bihar'}
+Person{fName='xyz', lName='kumar', email='xyz@gmail.com', pNo='12345055', address='xyz', city='A.bad', zip='824101', state='UP'}
