@@ -26,6 +26,9 @@ public class Main {
         AddressBook.addPerson(p2);
         AddressBook.addPerson(p3);
 
+        AddressBook.searchByCityName("A.bad") ;
+        AddressBook.searchByStateName("Bihar");
+
     }
 
 }

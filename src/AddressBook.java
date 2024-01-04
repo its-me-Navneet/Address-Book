@@ -91,6 +91,30 @@ public  class AddressBook {
          }
    }
 
+    public static void searchByCityName(String s) {
+
+        for(ArrayList<Person> arr : personDetails){
+
+            for(Person p:arr){
+                 if(p.getCity().equals(s)) {
+                     System.out.println(p);
+                 }
+            }
+        }
+
+    }
+
+    public static void searchByStateName(String state) {
+        for(ArrayList<Person> arr : personDetails){
+
+            for(Person p:arr){
+                if(p.getState().equals(state)) {
+                    System.out.println(p);
+                }
+            }
+        }
+    }
+
     public String getName() {
         return name;
     }
