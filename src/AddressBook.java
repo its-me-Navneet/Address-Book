@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public  class AddressBook {
 
@@ -136,6 +134,32 @@ public  class AddressBook {
             }
         }
         System.out.println(count);
+    }
+
+    public static void sort(){
+
+
+        Comparator<Person> nameComparator = Comparator.comparing(Person::getfName);
+
+        for (ArrayList<Person> personList : personDetails) {
+            if (personList != null) {
+                personList.sort(nameComparator);
+            }
+        }
+
+    }
+
+    public static  void displayAllConatct(){
+
+        for (ArrayList<Person> personList : personDetails) {
+
+            if (personList != null) {
+                for (Person p : personList) {
+                    System.out.println(p);
+                }
+                System.out.println("************");
+            }
+        }
     }
 
     public String getName() {

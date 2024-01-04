@@ -32,6 +32,11 @@ public class Main {
         AddressBook.countNoOfPersonByCity("A.bad") ;
         AddressBook.countNoOfPersonByState("Bihar") ;
 
+
+         AddressBook.sort() ;
+
+         AddressBook.displayAllConatct() ;
+
     }
 
 }
