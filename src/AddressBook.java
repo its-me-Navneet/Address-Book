@@ -14,16 +14,22 @@ public  class AddressBook {
 
     public AddressBook(){
 
-         for(int i = 0; i < personDetails.length; i++) {
+         for(int i = 0; i < 28; i++) {
              personDetails[i] = new ArrayList<>();
          }
      }
 
    public static void addPerson(Person p){
-        String name = p.getfName() + p.getlName()+p.getEmail();
+        String name = p.getfName() + p.getlName();
         int code = Main.getCode(p.getState())  ;
+        if(personDetails[code].contains(p)) {
+            System.out.println("already present ");
+            return;
+        }
+
         personDetails[code].add(p) ;
         listOfAddress.put(name ,p) ;
+       System.out.println("Added successfully");
    }
 
    public static boolean checkPerson(String name){
