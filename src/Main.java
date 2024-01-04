@@ -29,6 +29,9 @@ public class Main {
         AddressBook.searchByCityName("A.bad") ;
         AddressBook.searchByStateName("Bihar");
 //
+        AddressBook.countNoOfPersonByCity("A.bad") ;
+        AddressBook.countNoOfPersonByState("Bihar") ;
+
     }
 
 }

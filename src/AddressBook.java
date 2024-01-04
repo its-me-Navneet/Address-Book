@@ -1,7 +1,5 @@
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public  class AddressBook {
@@ -113,6 +111,31 @@ public  class AddressBook {
                 }
             }
         }
+    }
+
+    public static void countNoOfPersonByCity(String s) {
+        int count =0 ;
+        for(ArrayList<Person> arr : personDetails){
+
+            for(Person p:arr){
+                if(p.getCity().equals(s)) {
+                   count++ ;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+    public static void countNoOfPersonByState(String s) {
+        int count =0 ;
+        for(ArrayList<Person> arr : personDetails){
+
+            for(Person p:arr){
+                if(p.getState().equals(s)) {
+                    count++ ;
+                }
+            }
+        }
+        System.out.println(count);
     }
 
     public String getName() {
